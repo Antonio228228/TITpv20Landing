@@ -1,0 +1,185 @@
+:root {
+    --dark-color: rgb(26, 24, 24);
+    --light-color:  rgba(212, 197, 197, 0.781);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: var(--dark-color);
+    color: white;
+    width: 85%;
+    margin: 0 auto;
+    padding: 2rem;
+    /*text-align: center;*/
+    clip-path: polygon(0 0, 100% 0, 59% 98%, 0% 100%);
+    text-transform: uppercase;
+}
+
+main {
+    width: 85%;
+    height: 85vh;
+    margin: 0 auto;
+    background-color: var(--light-color);
+    padding: 13rem 2rem 10rem 2rem;  /*top right bottom left*/
+    margin-top: -10rem;
+    text-align: justify;
+    background: linear-gradient(#e66465, #9198e5);
+}
+
+img {
+    width: 600px;
+    height: 600px;
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    -webkit-animation: pulsing 3s infinite;
+    animation: pulsing 3s infinite;
+}
+@-webkit-keyframes pulsing {
+    0% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5)
+    }
+    50% {
+      -webkit-transform: scale(1.0, 1.0);
+      transform: scale(1.0, 1.0);
+    }
+    100% {
+      -webkit-transform: scale(0.5, 0.5);
+      transform: scale(0.5, 0.5);
+    }
+  }
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.heading-sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 0.6rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn {
+    display: inline-block;   /*prosto inline nelzja menjat margin i pro4ee*/
+    text-decoration: none;
+    color: black;
+    border: 2px solid;
+    border-color: white;
+    padding: 1rem; /*prostranstvo vnutri*/
+    margin: 2rem;  /*vqravnivanie po centru stranicq*/
+    opacity: 0; /*prozra4nost*/
+    animation-name: btn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;    /*4tobq ne vozvrashalas v ishodnoe polozhenie*/
+    transition-property: transform; /*kakaja budet transition (transform snizu)*/
+    transition-duration: 3s;
+}
+
+.btn:hover{  /*eto pravilo budet primenjatsa kogda na nego budet naveden kursor*/
+    transform: rotateY(180deg);
+}
+
+@keyframes btn {    /*keyframes eto sama animacija*/
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+    position: relative;    /*absolut po umol4aniju snimaet koordinatq i pihaet v ugol, relative ostavlaet na svoem meste no pozvolaet parametri polozhenija*/
+    animation-name: topIn;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; /*fiksatsija teksta v konce animacii*/ 
+
+}
+
+@keyframes topIn {
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 25px;
+    }
+}
+
+
+
+
+p {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%; 
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+
+
+.footer {
+    width: 85%;
+    margin: 0 auto;
+    background-color: var(--dark-color);
+    text-align: center;
+    padding: 3rem;
+    color: white;
+}
